@@ -1,12 +1,11 @@
 
-package com.example.librarymanagement.model;
+package com.example.librarymanagement.model.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.HashSet;
 import java.util.Set;
-import com.example.librarymanagement.model.*;
 
 @Entity
 @Table(name = "authors")

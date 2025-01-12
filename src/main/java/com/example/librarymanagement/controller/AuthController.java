@@ -1,6 +1,6 @@
 package com.example.librarymanagement.controller;
 
-import com.example.librarymanagement.model.Auth;
+import com.example.librarymanagement.model.entity.Auth;
 import com.example.librarymanagement.service.AuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
