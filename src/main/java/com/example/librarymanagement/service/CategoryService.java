@@ -3,7 +3,7 @@ package com.example.librarymanagement.service;
 import com.example.librarymanagement.mapper.CategoryMapper;
 import com.example.librarymanagement.model.dto.request.CategoriesRequest;
 import com.example.librarymanagement.model.dto.response.CategoriesResponse;
-import com.example.librarymanagement.model.entity.Categories;
+import com.example.librarymanagement.model.entity.Category;
 import com.example.librarymanagement.repository.CategoriesRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,23 +20,23 @@ public class CategoryService {
     private final CategoryMapper categoryMapper;
     private final CategoriesRepository categoriesRepository;
 
-    public Categories save(CategoriesRequest categories) {
-        Categories categoriesSaved = categoryMapper.toCategoriesRequest(categories);
-        log.info("Categories saved : {}", categoriesSaved.toString());
+    public Category save(CategoriesRequest categories) {
+        Category categorySaved = categoryMapper.toCategoriesRequest(categories);
+        log.info("Categories saved : {}", categorySaved.toString());
 
-        return categoriesRepository.save(categoriesSaved);
+        return categoriesRepository.save(categorySaved);
 
     }
 
     public CategoriesResponse findById(Long id) {
         log.info("Find Category by id : {}", id);
-        Categories categories = categoriesRepository.findById(id).orElseThrow(()-> new RuntimeException("Category not found"));
-        CategoriesResponse categoriesResponse=categoryMapper.toCategoriesResponse(categories);
+        Category category = categoriesRepository.findById(id).orElseThrow(()-> new RuntimeException("Category not found"));
+        CategoriesResponse categoriesResponse=categoryMapper.toCategoriesResponse(category);
 
         return categoriesResponse;
     }
 
-    public List<Categories> findAll() {
+    public List<Category> findAll() {
         log.info("Find all Categories ");
         return categoriesRepository.findAll();
     }
@@ -47,10 +47,12 @@ public class CategoryService {
         categoriesRepository.deleteById(id);
     }
 
-    public Categories update(Long id, CategoriesRequest categoriesRequest) {
-        Categories categories = categoriesRepository.findById(id).orElse(null);
-        categoryMapper.updateCategoriesRequest(categories,categoriesRequest);
+    public Category update(Long id, CategoriesRequest categoriesRequest) {
+        Category category = categoriesRepository.findById(id).orElse(null);
+        categoryMapper.updateCategoriesRequest(category,categoriesRequest);
         log.info("Update Category by id : {}", id);
-        return categoriesRepository.save(categories);
+        return categoriesRepository.save(category);
     }
+
+
 }

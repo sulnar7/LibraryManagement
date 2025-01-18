@@ -4,13 +4,10 @@ package com.example.librarymanagement.model.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.HashSet;
-import java.util.Set;
-
 @Entity
-@Table(name = "authors")
+@Table(name = "students")
 @Data
-public class Author {
+public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,10 +16,11 @@ public class Author {
     @Column(nullable = false, length = 100)
     private String name;
 
-    @Column(nullable = false, unique = true, length = 100)
+    @Column(nullable = false, length = 100)
     private String email;
 
-    @ManyToMany(mappedBy = "author")
-    private Set<Book> books = new HashSet<>();
+    @Column(nullable = false, length = 100)
+    private int sID;
+
 
 }

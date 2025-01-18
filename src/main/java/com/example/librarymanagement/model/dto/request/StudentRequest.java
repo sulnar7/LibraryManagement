@@ -8,9 +8,9 @@ import java.util.Set;
 
 @Data
 @AllArgsConstructor
-public class AuthorRequest {
+public class StudentRequest {
 
     private String name;
     private String email;
-    private Set<Category> categories;
+    private int sID;
 }

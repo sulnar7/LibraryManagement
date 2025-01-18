@@ -4,6 +4,7 @@ import com.example.librarymanagement.mapper.AuthorMapper;
 import com.example.librarymanagement.model.dto.request.AuthorRequest;
 import com.example.librarymanagement.model.entity.Author;
 import com.example.librarymanagement.repository.AuthorRepository;
+import com.example.librarymanagement.repository.CategoriesRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -16,9 +17,15 @@ import java.util.List;
 public class AuthorService {
     private final AuthorMapper authorMapper;
     private final AuthorRepository authorRepository;
+    private final CategoriesRepository categoriesRepository;
+    private final CategoryService categoryService;
     public Author save(AuthorRequest author) {
         Author authorSaved = authorMapper.toAuthorRequest(author);
         log.info("Author saved : {}", authorSaved.toString());
+//        Set<Categories> categories = categoryService.findCategoriesByIds(authorResponse.getCategories());
+        log.info("Author saved : {} saved", author.toString());
+        log.info("Author category : {} saved", author.getCategories());
+
 
         return authorRepository.save(authorSaved);
 

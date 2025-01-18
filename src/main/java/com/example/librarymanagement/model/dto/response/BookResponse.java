@@ -11,9 +11,9 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthorResponse {
+public class BookResponse {
     private Long id;
     private String name;
-    private String email;
+    private String imageUrl;
     private Set<Category> categories =new HashSet<>();
 }
