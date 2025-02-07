@@ -1,6 +1,6 @@
-package com.example.librarymanagement.model.dto.response;
+package com.example.librarymanagement.dto.response;
 
-import com.example.librarymanagement.model.entity.Category;
+import com.example.librarymanagement.entity.Category;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,5 +15,5 @@ public class AuthorResponse {
     private Long id;
     private String name;
     private String email;
-    private Set<Category> categories =new HashSet<>();
+    private Set<Category> categories = new HashSet<>();
 }

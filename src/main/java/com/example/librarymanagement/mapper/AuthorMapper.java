@@ -1,8 +1,8 @@
 package com.example.librarymanagement.mapper;
 
-import com.example.librarymanagement.model.dto.request.AuthorRequest;
-import com.example.librarymanagement.model.dto.response.AuthorResponse;
-import com.example.librarymanagement.model.entity.Author;
+import com.example.librarymanagement.dto.request.AuthorRequest;
+import com.example.librarymanagement.dto.response.AuthorResponse;
+import com.example.librarymanagement.entity.Author;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 

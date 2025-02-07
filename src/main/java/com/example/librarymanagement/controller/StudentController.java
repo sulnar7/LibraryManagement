@@ -1,7 +1,7 @@
 package com.example.librarymanagement.controller;
 
-import com.example.librarymanagement.model.dto.request.StudentRequest;
-import com.example.librarymanagement.model.entity.Student;
+import com.example.librarymanagement.dto.request.StudentRequest;
+import com.example.librarymanagement.entity.Student;
 import com.example.librarymanagement.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

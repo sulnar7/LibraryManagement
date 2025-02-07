@@ -1,6 +1,6 @@
 package com.example.librarymanagement.service;
 
-import com.example.librarymanagement.model.entity.Auth;
+import com.example.librarymanagement.entity.Auth;
 import com.example.librarymanagement.repository.AuthRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;

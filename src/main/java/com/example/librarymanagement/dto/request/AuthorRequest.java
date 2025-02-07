@@ -1,16 +1,19 @@
-package com.example.librarymanagement.model.dto.request;
+package com.example.librarymanagement.dto.request;
 
-import com.example.librarymanagement.model.entity.Category;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class AuthorRequest {
 
     private String name;
     private String email;
-    private Set<Category> categories;
+    private Set<Long> bookIds = new HashSet<>();
+
 }

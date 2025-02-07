@@ -1,8 +1,8 @@
 package com.example.librarymanagement.mapper;
 
-import com.example.librarymanagement.model.dto.request.BookRequest;
-import com.example.librarymanagement.model.dto.response.BookResponse;
-import com.example.librarymanagement.model.entity.Book;
+import com.example.librarymanagement.dto.request.BookRequest;
+import com.example.librarymanagement.dto.response.BookResponse;
+import com.example.librarymanagement.entity.Book;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 

@@ -1,9 +1,9 @@
 package com.example.librarymanagement.service;
 
 import com.example.librarymanagement.mapper.CategoryMapper;
-import com.example.librarymanagement.model.dto.request.CategoriesRequest;
-import com.example.librarymanagement.model.dto.response.CategoriesResponse;
-import com.example.librarymanagement.model.entity.Category;
+import com.example.librarymanagement.dto.request.CategoriesRequest;
+import com.example.librarymanagement.dto.response.CategoriesResponse;
+import com.example.librarymanagement.entity.Category;
 import com.example.librarymanagement.repository.CategoriesRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -30,8 +30,8 @@ public class CategoryService {
 
     public CategoriesResponse findById(Long id) {
         log.info("Find Category by id : {}", id);
-        Category category = categoriesRepository.findById(id).orElseThrow(()-> new RuntimeException("Category not found"));
-        CategoriesResponse categoriesResponse=categoryMapper.toCategoriesResponse(category);
+        Category category = categoriesRepository.findById(id).orElseThrow(() -> new RuntimeException("Category not found"));
+        CategoriesResponse categoriesResponse = categoryMapper.toCategoriesResponse(category);
 
         return categoriesResponse;
     }
@@ -49,7 +49,7 @@ public class CategoryService {
 
     public Category update(Long id, CategoriesRequest categoriesRequest) {
         Category category = categoriesRepository.findById(id).orElse(null);
-        categoryMapper.updateCategoriesRequest(category,categoriesRequest);
+        categoryMapper.updateCategoriesRequest(category, categoriesRequest);
         log.info("Update Category by id : {}", id);
         return categoriesRepository.save(category);
     }

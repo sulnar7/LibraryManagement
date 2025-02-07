@@ -1,7 +1,7 @@
 package com.example.librarymanagement.controller;
 
-import com.example.librarymanagement.model.dto.request.AuthorRequest;
-import com.example.librarymanagement.model.entity.Author;
+import com.example.librarymanagement.dto.request.AuthorRequest;
+import com.example.librarymanagement.entity.Author;
 import com.example.librarymanagement.service.AuthorService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,17 +15,18 @@ import java.util.List;
 @RequestMapping("/authors")
 public class AuthorsController {
     public final AuthorService authorService;
-    @PostMapping("/")
+
+    @PostMapping
     public Author createAuthor(@RequestBody AuthorRequest authorRequest) {
         return authorService.save(authorRequest);
     }
 
     @PutMapping("/{id}")
     public Author updateAuthor(@PathVariable Long id, @RequestBody AuthorRequest authorRequest) {
-        return authorService.update(id,authorRequest);
+        return authorService.update(id, authorRequest);
     }
 
-    @GetMapping("/")
+    @GetMapping
     public List<Author> getAllAuthors() {
         return authorService.findAll();
     }

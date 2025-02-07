@@ -1,12 +1,12 @@
-package com.example.librarymanagement.model.dto.response;
+package com.example.librarymanagement.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class StudentResponse {
-    private Long id;
+public class StudentRequest {
+
     private String name;
     private String email;
     private int sID;

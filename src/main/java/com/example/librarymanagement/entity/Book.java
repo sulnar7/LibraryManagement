@@ -1,5 +1,4 @@
-
-package com.example.librarymanagement.model.entity;
+package com.example.librarymanagement.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -29,7 +28,7 @@ public class Book {
     )
     private Set<Author> author = new HashSet<>();
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
 

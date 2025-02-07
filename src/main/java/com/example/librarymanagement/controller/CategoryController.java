@@ -1,7 +1,8 @@
 package com.example.librarymanagement.controller;
-import com.example.librarymanagement.model.dto.request.CategoriesRequest;
-import com.example.librarymanagement.model.dto.response.CategoriesResponse;
-import com.example.librarymanagement.model.entity.Category;
+
+import com.example.librarymanagement.dto.request.CategoriesRequest;
+import com.example.librarymanagement.dto.response.CategoriesResponse;
+import com.example.librarymanagement.entity.Category;
 import com.example.librarymanagement.service.CategoryService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
